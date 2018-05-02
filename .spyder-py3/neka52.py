@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#Oscar A. Nilsson
 #from pandas import DataFrame
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -216,3 +216,5 @@ Sweden.biggest('Arbetsloshet', 2014, 3)
 #%%
 Sweden.smallest('Arbetsloshet', 2014, 3)
 
+#%%
+Sweden.compare('Arbetsloshet', 2008, 2014)
