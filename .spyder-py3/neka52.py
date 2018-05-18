@@ -20,6 +20,25 @@ class neka52:
             self.name = filename + '.xlsx'
         
     def extractrows(self, Sheeet, yearfrom, yearto):
+        """
+        This is for exctracting rows from an excel sheet, which is in this 
+        cases in terms of years from 1970 to 2014.
+        
+        :param Sheet: name of the sheet that you want to extract the data from.
+        :type Sheet: string
+        :param yearfrom: The year to start extracting from, in this case at 
+                         least 1970 but less than 2014 and yearto
+        :type yearfrom: int gretaer than 1970 but less than 2014 and yearto
+        :param yearto: The year to stop extracting from, in this case
+        :type yearto: int less than 2014 but greater than 1970 and yearfrom.
+        """
+        if yearfrom < 1970:
+            return 'yearfrom needs to be bigger than or equal to 1970.'
+        elif yearto > 2014:
+            return 'yearto needs to be less than or equal to 2014.'
+        elif yearfrom > yearto:
+            return 'You need to have yearfrom to be bigger or equal to yearto'
+        
         x = pd.read_excel(self.name, Sheeet)
         v = x.loc[:,:]
         y = np.array(v)
