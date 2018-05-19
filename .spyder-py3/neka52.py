@@ -67,6 +67,7 @@ class neka52:
         
         newlist = []
         
+        #Getting the rowes from the sheet using the method for extracting rows
         x = self.extractrows(Sheeet, year, year)
         
         for i in range(35):
@@ -90,7 +91,19 @@ class neka52:
     
     def smallest(self, Sheeet ,year, n):
         """
-        FIX THE PROBLEM WITH THAT IT IS PRINTING YEARS AS ONE OF THE LOWEST ONE
+        Method for getting the n smallest value in an row, or in this case for
+        a year on a give sheet and returns the coutries in decending order
+        
+        :param Sheeet: Name of the sheet you want to extract the nth numbers of 
+                       smallest values of.
+        :type Sheeet: String
+        :param: year: The year you want to extract the data from
+        :type year: int
+        :param n: The number of smallest values you want to get
+        :type n: int
+        :returns: sting of coutries with the smallest values set in order
+        
+        
         """
         
         newlist = []
@@ -115,6 +128,19 @@ class neka52:
         return outarraynames
     
     def compare(self, Sheeet, year1, year2):
+        """
+        Method for comparing two year between eachother.
+        
+        :param Sheeet: The sheet you want to extract data from
+        :type Sheet: string
+        :param year1: the first year you want to comapre with will see if that 
+                      one is the biggest one
+        :type year1: int
+        :param year2: the second year you want to compare with
+        :type year2: int
+        :returns: return the contries and that have higer values in year1 
+                  than year2
+        """
         x1 = self.extractrows(Sheeet, year1, year1)
         x2 = self.extractrows(Sheeet, year2, year2)
         
