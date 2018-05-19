@@ -31,6 +31,7 @@ class neka52:
         :type yearfrom: int gretaer than 1970 but less than 2014 and yearto
         :param yearto: The year to stop extracting from, in this case
         :type yearto: int less than 2014 but greater than 1970 and yearfrom.
+        :returns: Array of the values
         """
         if yearfrom < 1970:
             return 'yearfrom needs to be bigger than or equal to 1970.'
@@ -43,12 +44,31 @@ class neka52:
         v = x.loc[:,:]
         y = np.array(v)
         outarray = y[yearfrom - 1970:yearto - 1970 + 1][:]
+        
+        
         return outarray
         
     
     def biggest(self, Sheeet ,year, n):
+        """
+        This method is for getting the n number of biggest values on one row
+        and from one sheet and then return the number of 
+        
+        :param Sheeet: Name of the sheet in the excel file that you want to 
+                       extract the data from.
+        :type Sheeet: string 
+        :param year: the year i.e. row that you want to extract the 
+                         information from
+        :type year: int
+        :param n: For choosing the number of biggest values on values.
+        :type n: int
+        :returns: String of the returned contries
+        """
+        
         newlist = []
+        
         x = self.extractrows(Sheeet, year, year)
+        
         for i in range(35):
             newlist.append(x[0][i ])
         newlist[0] = nsmallest(1, newlist)
